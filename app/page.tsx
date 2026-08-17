@@ -123,11 +123,8 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white py-5">
-        <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-2 px-4 text-xs text-slate-400 sm:flex-row">
-          <span>© 2026 Dinas Pekerjaan Umum dan Tata Ruang, Kota Tasikmalaya</span>
-          <Link href="/staf/login" className="hover:text-slate-600">
-            Login Staf
-          </Link>
+        <div className="mx-auto max-w-4xl px-4 text-center text-xs text-slate-400">
+          © 2026 Dinas Pekerjaan Umum dan Tata Ruang, Kota Tasikmalaya
         </div>
       </footer>
     </main>
