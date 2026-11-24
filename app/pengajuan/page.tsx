@@ -65,12 +65,10 @@ export default function PengajuanPage() {
     setLoading(true)
     setError(null)
 
-    // 1. Simpan data form ke tabel permohonan dulu
-    const { data: permohonan, error: insertError } = await supabase
-      .from('permohonan')
-      .insert([form])
-      .select('id, nomor_tiket')
-      .single()
+    // 1. Simpan data form lewat fungsi database (pemohon tanpa login tidak boleh membaca tabel permohonan)
+    const { data: permohonan, error: insertError } = await supabase.rpc('ajukan_permohonan', {
+      data: form,
+    })
 
     if (insertError || !permohonan) {
       setLoading(false)
